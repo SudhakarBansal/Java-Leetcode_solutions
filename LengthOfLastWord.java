@@ -11,7 +11,7 @@
 //    Input: s = "fluffy is still joyboy"
 //    Output: 6
 
-class Solution {
+class Solution2 {
     public int lengthOfLastWord(String s) {
         s= s.trim();
         for (int i = s.length()-1; i >=0; i--) {
@@ -25,7 +25,7 @@ class Solution {
 
 public class LengthOfLastWord {
     public static void main(String[] args) {
-        Solution obj= new Solution();
+        Solution2 obj= new Solution2();
         System.out.println(obj.lengthOfLastWord("fluffy is still joyboy"));
     }
 }
