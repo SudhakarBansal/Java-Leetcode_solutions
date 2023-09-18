@@ -22,21 +22,25 @@ import java.util.Arrays;
 
 public class NumbersSmallerThan {
     public static void main(String[] args) {
-        int[] arr = {7,7,7,7};
+        int[] arr = {7, 7, 7, 7};
         System.out.println(Arrays.toString(smallerNumbersThanCurrent(arr)));
     }
+
     public static int[] smallerNumbersThanCurrent(int[] nums) {
-        int[] output = new int[nums.length];
-        for (int i = 0; i < nums.length ; i++) {
-            int count = 0;
-            for (int num : nums) {
-                if (nums[i] > num) {
-                    count++;
+        int[] arr = nums.clone();
+        int[] ans = new int[arr.length];
+        Arrays.sort(arr);
+        int k = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (nums[i] == arr[j]) {
+                    ans[k] = j;
+                    k++;
+                    break;
                 }
-                output[i] = count;
             }
         }
-        return output;
+        return ans;
     }
 
 }
